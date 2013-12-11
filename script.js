@@ -2,11 +2,11 @@ $(document).ready(function(){
 
 	var nutritionType = {
 	
-		1:"calories",
-		2:"total fat",
-		6:"carbohydrates",
-		8:"protein",
-		5:"sodium",
+		"1":"calories",
+		"2":"total fat",
+		"6":"carbohydrates",
+		"8":"protein",
+		"5":"sodium"
 	
 	};
 
@@ -37,6 +37,23 @@ $(document).ready(function(){
 							
 							var productData = menuJson.products.product[index];
 							
+							var rawNutritionData = productData.nutritionals.nutrition;
+							
+							var nutritionalData = {};
+							
+							$(rawNutritionData).each(function(index, currentNutritionalData){
+								if(currentNutritionalData.type == "1") {
+									nutritionalData.calories = currentNutritionalData.value;
+								}
+							});
+							
+							console.log(nutritionalData);
+
+							/* 							
+							if((nutritionalData.calories > 300) && (nutritionalData.calories < 600)) {
+								//do ridiculous stuff
+							}
+							*/
 						}
 					
 					});
