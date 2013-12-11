@@ -2,11 +2,11 @@ $(document).ready(function(){
 
 	var nutritionType = {
 	
-		0:"calories",
-		1:"total fat",
-		2:"carbohydrates",
-		3:"protein",
-		4:"sodium",
+		1:"calories",
+		2:"total fat",
+		6:"carbohydrates",
+		8:"protein",
+		5:"sodium",
 	
 	};
 
