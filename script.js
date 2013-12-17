@@ -48,6 +48,33 @@ $(document).ready(function(){
 							});
 							
 							console.log(nutritionalData);
+							
+							if((nutritionalData.calories === 550)) {
+								//$(productItem).find("td.red_bold").html("TEST");
+								
+								//$(productItem).find("td.red_bold>Calories").html("TEST");
+								
+								//$(productItem).find(".red_bold").html("TEST");
+								
+								//$(productItem).find(".product_information").html("TEST");
+								
+								//$(productItem).find("#active_preview").html("TEST");
+								
+								//$(productItem).find("#inner_wrapper").html("TEST");
+								
+								//$(productInformation).find("td.red_bold").html("TEST");
+								
+								//$(productInformation).find(".red_bold").html("TEST");
+								
+								//$(activePreview).find("td.red_bold").html("TEST");
+								
+								//$(activePreview).find(".red_bold").html("TEST");
+								
+								//$(productItem).find('.red_bold').css('background','blue');
+								
+								//$('#active_preview').find('.red_bold').css('background','blue');
+								
+								//$('#inner_wrapper').find('.red_bold').css('background','blue');
 
 							 /*if(nutritionalData.calories === 0) {
 								$(nutritionalData.name).replaceWith("Testing1");
