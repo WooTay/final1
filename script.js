@@ -28,10 +28,11 @@ $(document).ready(function(){
 		
 
 				var $productItem = $(productItem);
+				$productItem.hover(function(){
 
-				var productName = $productItem.find("center").text();
-				
-				$(menuJson.products.product).each(function(index, menuItem){
+					var productName = $productItem.find("center").text();
+					
+					$(menuJson.products.product).each(function(index, menuItem){
 					
 					
 						if(menuItem.name === productName) {
@@ -49,7 +50,6 @@ $(document).ready(function(){
 								}
 							});
 							
-<<<<<<< HEAD
 							 console.log(nutritionalData);
 							
 							
@@ -65,13 +65,13 @@ $(document).ready(function(){
 							if((nutritionalData.calories == 0)) {
 								$productItem.find("tr:nth-child(2) td.red_bold").html("Low Self-Esteem"); 
 								
-							} else if ((nutritionalData.calories >= 15) && (nutritionalData.calories < 300)) {
+							} else if ((nutritionalData.calories > 15) && (nutritionalData.calories < 300)) {
 							  $productItem.find("tr:nth-child(2) td.red_bold").html("Muscle Cramps");
 							  
-							} else if ((nutritionalData.calories >= 310) && (nutritionalData.calories < 500)) {
+							} else if ((nutritionalData.calories > 310) && (nutritionalData.calories < 500)) {
 							  $productItem.find("tr:nth-child(2) td.red_bold").html("Nausea or Vomiting");
 							  
-							} else if ((nutritionalData.calories >= 510) && (nutritionalData.calories < 1090)) {
+							} else if ((nutritionalData.calories > 510) && (nutritionalData.calories < 1090)) {
 							  $productItem.find("tr:nth-child(2) td.red_bold").html("Heart Attack");
 							
 							}  
@@ -133,107 +133,21 @@ $(document).ready(function(){
 								 
 							}*/
 							
-=======
-							console.log(nutritionalData);
-							
-							if((nutritionalData.calories === 550)) {
-								//$(productItem).find("td.red_bold").html("TEST");
-								
-								//$(productItem).find("td.red_bold>Calories").html("TEST");
-								
-								//$(productItem).find(".red_bold").html("TEST");
-								
-								//$(productItem).find(".product_information").html("TEST");
-								
-								//$(productItem).find("#active_preview").html("TEST");
-								
-								//$(productItem).find("#inner_wrapper").html("TEST");
-								
-								//$(productInformation).find("td.red_bold").html("TEST");
-								
-								//$(productInformation).find(".red_bold").html("TEST");
-								
-								//$(activePreview).find("td.red_bold").html("TEST");
-								
-								//$(activePreview).find(".red_bold").html("TEST");
-								
-								//$(productItem).find('.red_bold').css('background','blue');
-								
-								//$('#active_preview').find('.red_bold').css('background','blue');
-								
-								//$('#inner_wrapper').find('.red_bold').css('background','blue');
-
-							 /*if(nutritionalData.calories === 0) {
-								$(nutritionalData.name).replaceWith("Testing1");
-								
-								} else if (nutritionalData.calories > 15) && (nutritionalData.calories < 300) {
-            					  		$(nutritionalData.name).replaceWith("Testing2");
-            					  
-            							} else if (nutritionalData.calories > 310) && (nutritionalData.calories < 500) {
-            					  		$(nutritionalData.name).replaceWith("Testing3");
-            					  
-            							} else if (nutritionalData.calories > 510) && (nutritionalData.calories < 1090) {
-            					  		$(nutritionalData.name).replaceWith("Testing4");*/
-            					  
-            					  
-							 /*if(nutritionalData.protein === 0) {
-								$(nutritionalData.name).replaceWith("Testing5");
-								
-								} else if (nutritionalData.protein > 1) && (nutritionalData.calories < 15) {
-            					  		$(nutritionalData.name).replaceWith("Testing5");
-            					  
-            							} else if (nutritionalData.protein > 16) && (nutritionalData.calories < 30) {
-            					  		$(nutritionalData.name).replaceWith("Testing7");
-            					  
-            							} else if (nutritionalData.protein > 31) && (nutritionalData.calories < 48) {
-            					  		$(nutritionalData.name).replaceWith("Testing8");*/
-            					  
-            					  
-            						/*if(nutritionalData.totalFat === 0) {
-								$(nutritionalData.name).replaceWith("Testing9");
-								
-								} else if (nutritionalData.totalFat > 0.5) && (nutritionalData.calories < 15) {
-            							$(nutritionalData.name).replaceWith("Testing10");
-            					  
-            							} else if (nutritionalData.totalFat > 14) && (nutritionalData.calories < 31) {
-            					  		$(nutritionalData.name).replaceWith("Testing11");
-            					  
-            							} else if (nutritionalData.totalFat > 32) && (nutritionalData.calories < 56) {
-            					  		$(nutritionalData.name).replaceWith("Testing12");*/
-								
-								
-							/*if(nutritionalData.sodium === 0) {
-								$(nutritionalData.name).replaceWith("Testing13");
-								
-								} else if (nutritionalData.sodium > 4) && (nutritionalData.calories < 30) {
-            					  		(nutritionalData.name).replaceWith("Testing14");
-            					  
-            							} else if (nutritionalData.sodium > 31) && (nutritionalData.calories < 60) {
-            					  		$(nutritionalData.name).replaceWith("Testing15");
-            					  
-            							} else if (nutritionalData.sodium > 61) && (nutritionalData.calories < 111) {
-            					  		$(nutritionalData.name).replaceWith("Testing16");*/
-								 
->>>>>>> 5ac393033225cb9118641b0922382e56266f359d
 						}
 					
 					});
 					
 					
+				});
 
 		
 			});
 			
 			console.log("timeout fired");
 			
-		},2500);
+		},1500);
 
 	});
 	
-<<<<<<< HEAD
-=======
-
-            	
->>>>>>> 5ac393033225cb9118641b0922382e56266f359d
 	
 });
