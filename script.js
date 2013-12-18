@@ -28,7 +28,6 @@ $(document).ready(function(){
 		
 
 				var $productItem = $(productItem);
-				$productItem.hover(function(){
 
 					var productName = $productItem.find("center").text();
 					
@@ -138,7 +137,6 @@ $(document).ready(function(){
 					});
 					
 					
-				});
 
 		
 			});
