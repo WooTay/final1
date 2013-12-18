@@ -143,7 +143,7 @@ $(document).ready(function(){
 			
 			console.log("timeout fired");
 			
-		},1500);
+		},2000);
 
 	});
 	
