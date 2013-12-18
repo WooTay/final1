@@ -28,216 +28,126 @@ $(document).ready(function(){
 		
 
 				var $productItem = $(productItem);
+				$productItem.hover(function(){
 
-				var productName = $productItem.find("center").text();
-				
-				$(menuJson.products.product).each(function(index, menuItem){
-				
-				
-					if(menuItem.name === productName) {
-						console.log(index);
-						
-						var productData = menuJson.products.product[index];
-						
-						var rawNutritionData = productData.nutritionals.nutrition;
-						
-						var nutritionalData = {};
-						
-						$(rawNutritionData).each(function(index, currentNutritionalData){
-							if(currentNutritionalData.type === "1") {
-								nutritionalData.calories = currentNutritionalData.value;
-							}
-						});
-						
-						 console.log(nutritionalData);
-						
-						
-						
-							//calories value
-							//$(productItem).find("tr:nth-child(2) td:nth-child(2)").html("Low Self-Esteem"); 
+					var productName = $productItem.find("center").text();
+					
+					$(menuJson.products.product).each(function(index, menuItem){
+					
+					
+						if(menuItem.name === productName) {
+							console.log(index);
 							
-						//$(productItem).find("td.notes").html("coool");
+							var productData = menuJson.products.product[index];
+							
+							var rawNutritionData = productData.nutritionals.nutrition;
+							
+							var nutritionalData = {};
+							
+							$(rawNutritionData).each(function(index, currentNutritionalData){
+								if(currentNutritionalData.type === "1") {
+									nutritionalData.calories = currentNutritionalData.value;
+								}
+							});
+							
+							 console.log(nutritionalData);
+							
+							
+							
+								//calories value
+								//$(productItem).find("tr:nth-child(2) td:nth-child(2)").html("Low Self-Esteem"); 
+								
+							//$(productItem).find("td.notes").html("coool");
 
-						//data cleanup
-						nutritionalData.calories = parseInt(nutritionalData.calories);
-						
-						if((nutritionalData.calories == 0)) {
-							$productItem.find("tr:nth-child(2) td.red_bold").html("Low Self-Esteem"); 
+							//data cleanup
+							nutritionalData.calories = parseInt(nutritionalData.calories);
 							
-						} else if ((nutritionalData.calories > 15) && (nutritionalData.calories < 300)) {
-						  $productItem.find("tr:nth-child(2) td.red_bold").html("Muscle Cramps");
-						  
-						} else if ((nutritionalData.calories > 310) && (nutritionalData.calories < 500)) {
-						  $productItem.find("tr:nth-child(2) td.red_bold").html("Nausea or Vomiting");
-						  
-						} else if ((nutritionalData.calories > 510) && (nutritionalData.calories < 1090)) {
-						  $productItem.find("tr:nth-child(2) td.red_bold").html("Heart Attack");
-						
-						}  
+							if((nutritionalData.calories == 0)) {
+								$productItem.find("tr:nth-child(2) td.red_bold").html("Low Self-Esteem"); 
+								
+							} else if ((nutritionalData.calories > 15) && (nutritionalData.calories < 300)) {
+							  $productItem.find("tr:nth-child(2) td.red_bold").html("Muscle Cramps");
 							  
-						/*if((nutritionalData.totalFat == 0)) {
-							$(productItem).find("tr:nth-child(3) td.red_bold").html("Low Self-Esteem");
-							
-							} else if ((nutritionalData.totalFat > 0.5) && (nutritionalData.calories < 15)) {
-							  $(productItem).find("tr:nth-child(3) td.red_bold").html("Muscle Cramps");
+							} else if ((nutritionalData.calories > 310) && (nutritionalData.calories < 500)) {
+							  $productItem.find("tr:nth-child(2) td.red_bold").html("Nausea or Vomiting");
 							  
-							} else if ((nutritionalData.totalFat > 14) && (nutritionalData.calories < 31)) {
-							  $(productItem).find("tr:nth-child(3) td.red_bold").html("Nausea or Vomiting");
-							  
-							} else if ((nutritionalData.totalFat > 32) && (nutritionalData.calories < 56)) {
-							  $(productItem).find("tr:nth-child(3) td.red_bold").html("Heart Attack");
+							} else if ((nutritionalData.calories > 510) && (nutritionalData.calories < 1090)) {
+							  $productItem.find("tr:nth-child(2) td.red_bold").html("Heart Attack");
 							
 							}  
-							  
-						if((nutritionalData.carbohydrates == 0)) {
-							$(productItem).find("tr:nth-child(4) td.red_bold").html("Low Self-Esteem");
-							
-<<<<<<< HEAD
-							} else if ((nutritionalData.carbohydrates > 4) && (nutritionalData.calories < 30)) {
-							  $(productItem).find("tr:nth-child(4) td.red_bold").html("Muscle Cramps");
-							  
-							} else if ((nutritionalData.carbohydrates > 31) && (nutritionalData.calories < 60)) {
-							  $(productItem).find("tr:nth-child(4) td.red_bold").html("Nausea or Vomiting");
-							  
-							} else if ((nutritionalData.carbohydrates > 61) && (nutritionalData.calories < 111)) {
-							  $(productItem).find("tr:nth-child(4) td.red_bold").html("Heart Attack");
-							
-							}  
-							  
-						 if((nutritionalData.protein == 0)) {
-							$(productItem).find("tr:nth-child(5) td.red_bold").html("Low Self-Esteem");
-							
-							} else if ((nutritionalData.protein > 1) && (nutritionalData.calories < 15)) {
-							  $(productItem).find("tr:nth-child(5) td.red_bold").html("Muscle Cramps");
-							  
-							} else if ((nutritionalData.protein > 16) && (nutritionalData.calories < 30)) {
-							  $(productItem).find("tr:nth-child(5) td.red_bold").html("Nausea or Vomiting");
-							  
-							} else if ((nutritionalData.protein > 31) && (nutritionalData.calories < 48)) {
-							  $(productItem).find("tr:nth-child(5) td.red_bold").html("Heart Attack");  
-							
-							} 
-			
-						if((nutritionalData.sodium == 0)) {
-							$(productItem).find("tr:nth-child(6) td.red_bold").html("Low Self-Esteem");
-							
-							} else if ((nutritionalData.sodium > 10) && (nutritionalData.calories < 240)) {
-							  $(productItem).find("tr:nth-child(6) td.red_bold").html("Muscle Cramps");
-							  
-							} else if ((nutritionalData.sodium > 280) && (nutritionalData.calories < 990)) {
-							  $(productItem).find("tr:nth-child(6) td.red_bold").html("Nausea or Vomiting");
-							  
-							} else if ((nutritionalData.sodium > 1030) && (nutritionalData.calories < 2150)) {
-							  $(productItem).find("tr:nth-child(6) td.red_bold").html("Heart Attack");
-														
-							 
-						}*/
-						
-					}
+            					  
+            				/*if((nutritionalData.totalFat == 0)) {
+								$(productItem).find("tr:nth-child(3) td.red_bold").html("Low Self-Esteem");
+								
+								} else if ((nutritionalData.totalFat > 0.5) && (nutritionalData.calories < 15)) {
+            					  $(productItem).find("tr:nth-child(3) td.red_bold").html("Muscle Cramps");
+            					  
+            					} else if ((nutritionalData.totalFat > 14) && (nutritionalData.calories < 31)) {
+            					  $(productItem).find("tr:nth-child(3) td.red_bold").html("Nausea or Vomiting");
+            					  
+            					} else if ((nutritionalData.totalFat > 32) && (nutritionalData.calories < 56)) {
+            					  $(productItem).find("tr:nth-child(3) td.red_bold").html("Heart Attack");
+            					
+            					}  
+            					  
+            				if((nutritionalData.carbohydrates == 0)) {
+								$(productItem).find("tr:nth-child(4) td.red_bold").html("Low Self-Esteem");
+								
+								} else if ((nutritionalData.carbohydrates > 4) && (nutritionalData.calories < 30)) {
+            					  $(productItem).find("tr:nth-child(4) td.red_bold").html("Muscle Cramps");
+            					  
+            					} else if ((nutritionalData.carbohydrates > 31) && (nutritionalData.calories < 60)) {
+            					  $(productItem).find("tr:nth-child(4) td.red_bold").html("Nausea or Vomiting");
+            					  
+            					} else if ((nutritionalData.carbohydrates > 61) && (nutritionalData.calories < 111)) {
+            					  $(productItem).find("tr:nth-child(4) td.red_bold").html("Heart Attack");
+            					
+            					}  
+            					  
+							 if((nutritionalData.protein == 0)) {
+								$(productItem).find("tr:nth-child(5) td.red_bold").html("Low Self-Esteem");
+								
+								} else if ((nutritionalData.protein > 1) && (nutritionalData.calories < 15)) {
+            					  $(productItem).find("tr:nth-child(5) td.red_bold").html("Muscle Cramps");
+            					  
+            					} else if ((nutritionalData.protein > 16) && (nutritionalData.calories < 30)) {
+            					  $(productItem).find("tr:nth-child(5) td.red_bold").html("Nausea or Vomiting");
+            					  
+            					} else if ((nutritionalData.protein > 31) && (nutritionalData.calories < 48)) {
+            					  $(productItem).find("tr:nth-child(5) td.red_bold").html("Heart Attack");  
+            					
+            					} 
 				
-=======
-							console.log(nutritionalData);
-							
-							if((nutritionalData.calories === 550)) {
-								//$(productItem).find("td.red_bold").html("TEST");
+							if((nutritionalData.sodium == 0)) {
+								$(productItem).find("tr:nth-child(6) td.red_bold").html("Low Self-Esteem");
 								
-								//$(productItem).find("td.red_bold>Calories").html("TEST");
-								
-								//$(productItem).find(".red_bold").html("TEST");
-								
-								//$(productItem).find(".product_information").html("TEST");
-								
-								//$(productItem).find("#active_preview").html("TEST");
-								
-								//$(productItem).find("#inner_wrapper").html("TEST");
-								
-								//$(productInformation).find("td.red_bold").html("TEST");
-								
-								//$(productInformation).find(".red_bold").html("TEST");
-								
-								//$(activePreview).find("td.red_bold").html("TEST");
-								
-								//$(activePreview).find(".red_bold").html("TEST");
-								
-								//$(productItem).find('.red_bold').css('background','blue');
-								
-								//$('#active_preview').find('.red_bold').css('background','blue');
-								
-								//$('#inner_wrapper').find('.red_bold').css('background','blue');
-
-							 /*if(nutritionalData.calories === 0) {
-								$(nutritionalData.name).replaceWith("Testing1");
-								
-								} else if (nutritionalData.calories > 15) && (nutritionalData.calories < 300) {
-            					  		$(nutritionalData.name).replaceWith("Testing2");
+								} else if ((nutritionalData.sodium > 10) && (nutritionalData.calories < 240)) {
+            					  $(productItem).find("tr:nth-child(6) td.red_bold").html("Muscle Cramps");
             					  
-            							} else if (nutritionalData.calories > 310) && (nutritionalData.calories < 500) {
-            					  		$(nutritionalData.name).replaceWith("Testing3");
+            					} else if ((nutritionalData.sodium > 280) && (nutritionalData.calories < 990)) {
+            					  $(productItem).find("tr:nth-child(6) td.red_bold").html("Nausea or Vomiting");
             					  
-            							} else if (nutritionalData.calories > 510) && (nutritionalData.calories < 1090) {
-            					  		$(nutritionalData.name).replaceWith("Testing4");*/
-            					  
-            					  
-							 /*if(nutritionalData.protein === 0) {
-								$(nutritionalData.name).replaceWith("Testing5");
-								
-								} else if (nutritionalData.protein > 1) && (nutritionalData.calories < 15) {
-            					  		$(nutritionalData.name).replaceWith("Testing5");
-            					  
-            							} else if (nutritionalData.protein > 16) && (nutritionalData.calories < 30) {
-            					  		$(nutritionalData.name).replaceWith("Testing7");
-            					  
-            							} else if (nutritionalData.protein > 31) && (nutritionalData.calories < 48) {
-            					  		$(nutritionalData.name).replaceWith("Testing8");*/
-            					  
-            					  
-            						/*if(nutritionalData.totalFat === 0) {
-								$(nutritionalData.name).replaceWith("Testing9");
-								
-								} else if (nutritionalData.totalFat > 0.5) && (nutritionalData.calories < 15) {
-            							$(nutritionalData.name).replaceWith("Testing10");
-            					  
-            							} else if (nutritionalData.totalFat > 14) && (nutritionalData.calories < 31) {
-            					  		$(nutritionalData.name).replaceWith("Testing11");
-            					  
-            							} else if (nutritionalData.totalFat > 32) && (nutritionalData.calories < 56) {
-            					  		$(nutritionalData.name).replaceWith("Testing12");*/
-								
-								
-							/*if(nutritionalData.sodium === 0) {
-								$(nutritionalData.name).replaceWith("Testing13");
-								
-								} else if (nutritionalData.sodium > 4) && (nutritionalData.calories < 30) {
-            					  		(nutritionalData.name).replaceWith("Testing14");
-            					  
-            							} else if (nutritionalData.sodium > 31) && (nutritionalData.calories < 60) {
-            					  		$(nutritionalData.name).replaceWith("Testing15");
-            					  
-            							} else if (nutritionalData.sodium > 61) && (nutritionalData.calories < 111) {
-            					  		$(nutritionalData.name).replaceWith("Testing16");*/
+            					} else if ((nutritionalData.sodium > 1030) && (nutritionalData.calories < 2150)) {
+            					  $(productItem).find("tr:nth-child(6) td.red_bold").html("Heart Attack");
+            					            				
 								 
+							}*/
+							
 						}
 					
 					});
 					
->>>>>>> 5ac393033225cb9118641b0922382e56266f359d
-				});
-				
 					
+				});
 
 		
 			});
 			
 			console.log("timeout fired");
 			
-		},2500);
+		},1500);
 
 	});
 	
-<<<<<<< HEAD
-=======
-
-            	
->>>>>>> 5ac393033225cb9118641b0922382e56266f359d
 	
 });
